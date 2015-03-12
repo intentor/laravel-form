@@ -10,8 +10,9 @@
 4. <a href="#helpers">Helpers</a>
 5. <a href="#helpers">Helpers</a>
 6. <a href="#themes">Themes</a>
-7. <a href="#support">Support</a>
-8. <a href="#license">License</a>
+7. <a href="#changelog">Changelog</a>
+8. <a href="#support">Support</a>
+9. <a href="#license">License</a>
 
 ## <a id="introduction"></a>Introduction
 
@@ -375,6 +376,10 @@ All themes are subfolders at `src/resources/views/partials/form` folder.
 
 **Note**: currently, to create a custom form theme, you have to place the theme at `src/resources/views/partials/form` folder. 
 
+## <a id="changelog"></a>Changelog
+
+Please see [CHANGELOG](CHANGELOG.md).
+
 ## <a id="support"></a>Support
 
 Found a bug? Please create an issue on the [GitHub project page](https://github.com/intentor/laravel-form/issues) or send a pull request if have a fix or extension.
@@ -383,4 +388,4 @@ You can also send me a message at support@intentor.com.br to discuss more obscur
 
 ## <a id="license"></a>License
 
-Licensed under the [The MIT License (MIT)](http://opensource.org/licenses/MIT). Please read LICENSE for more information.
+Licensed under the [The MIT License (MIT)](http://opensource.org/licenses/MIT). Please see [LICENSE](LICENSE) for more information.
