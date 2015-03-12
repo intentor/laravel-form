@@ -1,5 +1,7 @@
 # Laravel Form Helper
 
+**Form helpers for Laravel 5+**
+
 ## Contents
 
 1. <a href="#introduction">Introduction</a>
@@ -8,7 +10,8 @@
 4. <a href="#helpers">Helpers</a>
 5. <a href="#helpers">Helpers</a>
 6. <a href="#themes">Themes</a>
-7. <a href="#license">License</a>
+7. <a href="#support">Support</a>
+8. <a href="#license">License</a>
 
 ## <a id="introduction"></a>Introduction
 
@@ -365,14 +368,16 @@ Themes are a way to customize the look of forms using partial views.
 There are three different themes available:
 
 1. **default**: a simple form theme without any third party dependencies.
-2. **horizontal*: default [Bootstrap horizontal](http://getbootstrap.com/css/#forms-horizontal) form (Requires [Bootstrap 3](http://getbootstrap.com/)).
+2. **horizontal**: default [Bootstrap horizontal](http://getbootstrap.com/css/#forms-horizontal) form (Requires [Bootstrap 3](http://getbootstrap.com/)).
 3. **vertical**: default [Bootstrap vertical](http://getbootstrap.com/css/#forms-example) form (Requires [Bootstrap 3](http://getbootstrap.com/)).
 
 All themes are subfolders at `src/resources/views/partials/form` folder.
 
 **Note**: currently, to create a custom form theme, you have to place the theme at `src/resources/views/partials/form` folder. 
 
-Found a bug? Please create an issue on the [GitHub project page](https://github.com/intentor/laravel-form-helper/) or send a pull request if have a fix or extension.
+## <a id="support"></a>Support
+
+Found a bug? Please create an issue on the [GitHub project page](https://github.com/intentor/laravel-form/issues) or send a pull request if have a fix or extension.
 
 You can also send me a message at support@intentor.com.br to discuss more obscure matters about the component.
 
