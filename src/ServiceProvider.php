@@ -5,7 +5,7 @@ use View;
 /**
  * Form service provider.
  */
-class ServiceProvider extends \Illuminate\Support\ServiceProvider\ServiceProvider {
+class ServiceProvider extends \Illuminate\Support\ServiceProvider {
 	/**
 	 * Register any application services.
 	 *
