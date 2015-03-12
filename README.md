@@ -8,26 +8,26 @@
 2. <a href="#installation">Installation</a>
 3. <a href="#quick-start">Quick start</a>
 4. <a href="#helpers">Helpers</a>
-    1. <a href="#form-open">Form::open</a>
-    2. <a href="#form-model">Form::model</a>
-    3. <a href="#form-close">Form::close</a>
-    4. <a href="#form-label">Form::label</a>
-    5. <a href="#form-readonly">Form::readonly</a>
-    6. <a href="#form-hidden">Form::hidden</a>
-    7. <a href="#form-text">Form::text</a>
-    8. <a href="#form-textarea">Form::textarea</a>
-    9. <a href="#form-email">Form::email</a>
-    10. <a href="#form-url">Form::url</a>
-    11. <a href="#form-number">Form::number</a>
-    12. <a href="#form-password">Form::password</a>
-    13. <a href="#form-checkbox">Form::checkbox</a>
-    14. <a href="#form-radio">Form::radio</a>
-    15. <a href="#form-checkboxGroup">Form::checkboxGroup</a>
-    16. <a href="#form-radioGroup">Form::radioGroup</a>
-    17. <a href="#form-dropdown">Form::dropdown</a>
-    18. <a href="#form-submit">Form::submit</a>
-    19. <a href="#form-reset">Form::reset</a>
-    20. <a href="#form-buttons">Form::buttons</a>
+    1. <a href="#form-open">open</a>
+    2. <a href="#form-model">model</a>
+    3. <a href="#form-close">close</a>
+    4. <a href="#form-label">label</a>
+    5. <a href="#form-readonly">readonly</a>
+    6. <a href="#form-hidden">hidden</a>
+    7. <a href="#form-text">text</a>
+    8. <a href="#form-textarea">textarea</a>
+    9. <a href="#form-email">email</a>
+    10. <a href="#form-url">url</a>
+    11. <a href="#form-number">number</a>
+    12. <a href="#form-password">password</a>
+    13. <a href="#form-checkbox">checkbox</a>
+    14. <a href="#form-radio">radio</a>
+    15. <a href="#form-checkboxGroup">checkboxGroup</a>
+    16. <a href="#form-radioGroup">radioGroup</a>
+    17. <a href="#form-dropdown">dropdown</a>
+    18. <a href="#form-submit">submit</a>
+    19. <a href="#form-reset">reset</a>
+    20. <a href="#form-buttons">buttons</a>
 5. <a href="#themes">Themes</a>
 6. <a href="#changelog">Changelog</a>
 7. <a href="#support">Support</a>
@@ -67,12 +67,12 @@ At `config/app.php`, add the Service Provider and the Facade:
     ]
 ```
 
-## <a id="quick-start"></a> Quick start
+## <a id="quick-start"></a>Quick start
 
 To create a form, use the `Form` facade to open and close it:
 
 ```php
-{!! Form::open(action('LoginController@store')) !!}
+{!! Form::open(action('SomeController@action')) !!}
 					
 {!! Form::close() !!}
 ```
@@ -80,7 +80,7 @@ To create a form, use the `Form` facade to open and close it:
 Any controls you want to create must be placed between the opening and closing of the form:
 
 ```php
-{!! Form::open(action('LoginController@store')) !!}
+{!! Form::open(action('SomeController@action')) !!}
 	
 {!! Form::text('name', 'Name') !!}
 						
@@ -89,9 +89,9 @@ Any controls you want to create must be placed between the opening and closing o
 {!! Form::close() !!}
 ```
 
-## <a id="helpers"></a> Helpers
+## <a id="helpers"></a>Helpers
 
-### <a id="form-open"></a>Form::open
+### <a id="form-open"></a>open
 
 Opens a form. See <a href="#themes">Themes</a> for more details on form themes.
 
@@ -107,7 +107,7 @@ Opens a form. See <a href="#themes">Themes</a> for more details on form themes.
 * bool `$includeCsrfToken` Indicates whether the CSRF token should be included.
 * array `$attributes` Form attributes.
 
-### <a id="form-model"></a>Form::model
+### <a id="form-model"></a>model
 
 Opens a form for a model. See <a href="#themes">Themes</a> for more details on form themes.
 
@@ -124,7 +124,7 @@ Opens a form for a model. See <a href="#themes">Themes</a> for more details on f
 * bool `$includeCsrfToken` Indicates whether the CSRF token should be included.
 * array `$attributes` Form attributes.
 
-### <a id="form-close"></a>Form::close
+### <a id="form-close"></a>close
 
 Closes a from.
 
@@ -136,7 +136,7 @@ Closes a from.
 
 None.
 
-### <a id="form-label"></a>Form::label
+### <a id="form-label"></a>label
 
 Creates a label.
 
@@ -150,7 +150,7 @@ Creates a label.
 * string `$field` Related field name.
 * array `$attributes` Element attributes.
 
-### <a id="form-readonly"></a>Form::readonly
+### <a id="form-readonly"></a>readonly
 
 Creates a readonly control.
 
@@ -164,7 +164,7 @@ Creates a readonly control.
 * string `$text` Field text.
 * array `$attributes` Element attributes.
 
-### <a id="form-hidden"></a>Form::hidden
+### <a id="form-hidden"></a>hidden
 
 Creates a hidden field.
 
@@ -178,7 +178,7 @@ Creates a hidden field.
 * string `$value` Field value.
 * array `$attributes` Element attributes.
 
-### <a id="form-text"></a>Form::text
+### <a id="form-text"></a>text
 
 Creates a text field.
 
@@ -192,7 +192,7 @@ Creates a text field.
 * string `$label` Field label.
 * array `$attributes` Element attributes.
 
-### <a id="form-textarea"></a>Form::textarea
+### <a id="form-textarea"></a>textarea
 
 Creates a textarea field.
 
@@ -206,7 +206,7 @@ Creates a textarea field.
 * string `$label` Field label.
 * array `$attributes` Element attributes.
 
-### <a id="form-email"></a>Form::email
+### <a id="form-email"></a>email
 
 Creates an e-mail field.
 
@@ -220,7 +220,7 @@ Creates an e-mail field.
 * string `$label` Field label.
 * array `$attributes` Element attributes.
 
-### <a id="form-url"></a>Form::url
+### <a id="form-url"></a>url
 
 Creates an URL field.
 
@@ -234,7 +234,7 @@ Creates an URL field.
 * string `$label` Field label.
 * array `$attributes` Element attributes.
 
-### <a id="form-number"></a>Form::number
+### <a id="form-number"></a>number
 
 Creates an URL field.
 
@@ -251,7 +251,7 @@ Creates an URL field.
 * int `$step` Combined with the min value, defines the acceptable numbers in the range.
 * array `$attributes` Element attributes.
 
-### <a id="form-password"></a>Form::password
+### <a id="form-password"></a>password
 
 Creates a password field.
 
@@ -265,7 +265,7 @@ Creates a password field.
 * string `$label` Field label.
 * array `$attributes` Element attributes.
 
-### <a id="form-checkbox"></a>Form::checkbox
+### <a id="form-checkbox"></a>checkbox
 
 Creates a checkbox field.
 
@@ -280,7 +280,7 @@ Creates a checkbox field.
 * string `$value` Field value.
 * array `$attributes` Element attributes.
 
-### <a id="form-radio"></a>Form::radio
+### <a id="form-radio"></a>radio
 
 Creates a radio field.
 
@@ -294,7 +294,7 @@ Creates a radio field.
 * string `$label` Field label.
 * array `$attributes` Element attributes.
 
-### <a id="form-checkboxGroup"></a>Form::checkboxGroup
+### <a id="form-checkboxGroup"></a>checkboxGroup
 
 Creates a checkbox group.
 
@@ -310,7 +310,7 @@ Creates a checkbox group.
 * array `$selected` Selected values.
 * array `$attributes` Element attributes.
 
-### <a id="form-radioGroup"></a>Form::radioGroup
+### <a id="form-radioGroup"></a>radioGroup
 
 Creates a radio group.
 
@@ -326,7 +326,7 @@ Creates a radio group.
 * string `$selected` Selected value.
 * array `$attributes` Element attributes.
 
-### <a id="form-dropdown"></a>Form::dropdown
+### <a id="form-dropdown"></a>dropdown
 
 Creates a dropdown field.
 
@@ -343,7 +343,7 @@ Creates a dropdown field.
 * string `$selected` Selected value.
 * array `$attributes` Element attributes.
 
-### <a id="form-submit"></a>Form::submit
+### <a id="form-submit"></a>submit
 
 Creates a submit button.
 
@@ -355,7 +355,7 @@ Creates a submit button.
  
 * string `$label` Control label.
 
-### <a id="form-reset"></a>Form::reset
+### <a id="form-reset"></a>reset
 
 Creates a reset button.
 
@@ -367,7 +367,7 @@ Creates a reset button.
 
 None
 
-### <a id="form-buttons"></a>Form::buttons
+### <a id="form-buttons"></a>buttons
 
 Creates form buttons (submit and reset).
 
