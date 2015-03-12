@@ -8,11 +8,30 @@
 2. <a href="#installation">Installation</a>
 3. <a href="#quick-start">Quick start</a>
 4. <a href="#helpers">Helpers</a>
-5. <a href="#helpers">Helpers</a>
-6. <a href="#themes">Themes</a>
-7. <a href="#changelog">Changelog</a>
-8. <a href="#support">Support</a>
-9. <a href="#license">License</a>
+    1. <a href="#form-open"></a>Form::open
+    2. <a href="#form-model"></a>Form::model
+    3. <a href="#form-close"></a>Form::close
+    4. <a href="#form-label"></a>Form::label
+    5. <a href="#form-readonly"></a>Form::readonly
+    6. <a href="#form-hidden"></a>Form::hidden
+    7. <a href="#form-text"></a>Form::text
+    8. <a href="#form-textarea"></a>Form::textarea
+    9. <a href="#form-email"></a>Form::email
+    10. <a href="#form-url"></a>Form::url
+    11. <a href="#form-number"></a>Form::number
+    12. <a href="#form-password"></a>Form::password
+    13. <a href="#form-checkbox"></a>Form::checkbox
+    14. <a href="#form-radio"></a>Form::radio
+    15. <a href="#form-checkboxGroup"></a>Form::checkboxGroup
+    16. <a href="#form-radioGroup"></a>Form::radioGroup
+    17. <a href="#form-dropdown"></a>Form::dropdown
+    18. <a href="#form-submit"></a>Form::submit
+    19. <a href="#form-reset"></a>Form::reset
+    20. <a href="#form-buttons"></a>Form::buttons
+5. <a href="#themes">Themes</a>
+6. <a href="#changelog">Changelog</a>
+7. <a href="#support">Support</a>
+8. <a href="#license">License</a>
 
 ## <a id="introduction"></a>Introduction
 
@@ -72,7 +91,7 @@ Any controls you want to create must be placed between the opening and closing o
 
 ## <a id="helpers"></a> Helpers
 
-### Form::open
+### <a id="form-open"></a>Form::open
 
 Opens a form. See <a href="#themes">Themes</a> for more details on form themes.
 
@@ -88,7 +107,7 @@ Opens a form. See <a href="#themes">Themes</a> for more details on form themes.
 * bool `$includeCsrfToken` Indicates whether the CSRF token should be included.
 * array `$attributes` Form attributes.
 
-### Form::model
+### <a id="form-model"></a>Form::model
 
 Opens a form for a model. See <a href="#themes">Themes</a> for more details on form themes.
 
@@ -105,7 +124,7 @@ Opens a form for a model. See <a href="#themes">Themes</a> for more details on f
 * bool `$includeCsrfToken` Indicates whether the CSRF token should be included.
 * array `$attributes` Form attributes.
 
-### Form::close
+### <a id="form-close"></a>Form::close
 
 Closes a from.
 
@@ -117,7 +136,7 @@ Closes a from.
 
 None.
 
-### Form::label
+### <a id="form-label"></a>Form::label
 
 Creates a label.
 
@@ -131,7 +150,7 @@ Creates a label.
 * string `$field` Related field name.
 * array `$attributes` Element attributes.
 
-### Form::readonly
+### <a id="form-readonly"></a>Form::readonly
 
 Creates a readonly control.
 
@@ -145,8 +164,7 @@ Creates a readonly control.
 * string `$text` Field text.
 * array `$attributes` Element attributes.
 
-
-### Form::hidden
+### <a id="form-hidden"></a>Form::hidden
 
 Creates a hidden field.
 
@@ -160,7 +178,7 @@ Creates a hidden field.
 * string `$value` Field value.
 * array `$attributes` Element attributes.
 
-### Form::text
+### <a id="form-text"></a>Form::text
 
 Creates a text field.
 
@@ -174,7 +192,7 @@ Creates a text field.
 * string `$label` Field label.
 * array `$attributes` Element attributes.
 
-### Form::textarea
+### <a id="form-textarea"></a>Form::textarea
 
 Creates a textarea field.
 
@@ -188,7 +206,7 @@ Creates a textarea field.
 * string `$label` Field label.
 * array `$attributes` Element attributes.
 
-### Form::email
+### <a id="form-email"></a>Form::email
 
 Creates an e-mail field.
 
@@ -202,7 +220,7 @@ Creates an e-mail field.
 * string `$label` Field label.
 * array `$attributes` Element attributes.
 
-### Form::url
+### <a id="form-url"></a>Form::url
 
 Creates an URL field.
 
@@ -216,7 +234,7 @@ Creates an URL field.
 * string `$label` Field label.
 * array `$attributes` Element attributes.
 
-### Form::number
+### <a id="form-number"></a>Form::number
 
 Creates an URL field.
 
@@ -233,7 +251,7 @@ Creates an URL field.
 * int `$step` Combined with the min value, defines the acceptable numbers in the range.
 * array `$attributes` Element attributes.
 
-### Form::password
+### <a id="form-password"></a>Form::password
 
 Creates a password field.
 
@@ -247,7 +265,7 @@ Creates a password field.
 * string `$label` Field label.
 * array `$attributes` Element attributes.
 
-### Form::checkbox
+### <a id="form-checkbox"></a>Form::checkbox
 
 Creates a checkbox field.
 
@@ -262,7 +280,7 @@ Creates a checkbox field.
 * string `$value` Field value.
 * array `$attributes` Element attributes.
 
-### Form::radio
+### <a id="form-radio"></a>Form::radio
 
 Creates a radio field.
 
@@ -276,7 +294,7 @@ Creates a radio field.
 * string `$label` Field label.
 * array `$attributes` Element attributes.
 
-### Form::checkboxGroup
+### <a id="form-checkboxGroup"></a>Form::checkboxGroup
 
 Creates a checkbox group.
 
@@ -292,7 +310,7 @@ Creates a checkbox group.
 * array `$selected` Selected values.
 * array `$attributes` Element attributes.
 
-### Form::radioGroup
+### <a id="form-radioGroup"></a>Form::radioGroup
 
 Creates a radio group.
 
@@ -308,7 +326,7 @@ Creates a radio group.
 * string `$selected` Selected value.
 * array `$attributes` Element attributes.
 
-### Form::dropdown
+### <a id="form-dropdown"></a>Form::dropdown
 
 Creates a dropdown field.
 
@@ -325,7 +343,7 @@ Creates a dropdown field.
 * string `$selected` Selected value.
 * array `$attributes` Element attributes.
 
-### Form::submit
+### <a id="form-submit"></a>Form::submit
 
 Creates a submit button.
 
@@ -337,7 +355,7 @@ Creates a submit button.
  
 * string `$label` Control label.
 
-### Form::reset
+### <a id="form-reset"></a>Form::reset
 
 Creates a reset button.
 
@@ -349,7 +367,7 @@ Creates a reset button.
 
 None
 
-### Form::buttons
+### <a id="form-buttons"></a>Form::buttons
 
 Creates form buttons (submit and reset).
 
@@ -378,7 +396,7 @@ All themes are subfolders at `src/resources/views/partials/form` folder.
 
 ## <a id="changelog"></a>Changelog
 
-Please see [CHANGELOG](CHANGELOG.md).
+Please see [CHANGELOG.md](CHANGELOG.md).
 
 ## <a id="support"></a>Support
 
