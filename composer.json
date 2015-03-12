@@ -1,0 +1,30 @@
+{
+    "name": "intentor/laravel-form",
+    "description": "Form helpers for Laravel 5+.",
+    "keywords": [ "laravel", "form", "html", "helper" ],
+	"homepage": "https://github.com/intentor/laravel-form",
+	"type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "André \"Intentor\" Martins",
+            "email": "support@intentor.com.br",
+            "homepage": "http://intentor.com.br"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/intentor/laravel-form/issues"
+    },
+    "require": {
+        "php": ">=5.4.0",
+        "illuminate/support": "5.0.x"
+    },
+    "autoload": {
+        "psr-4": {
+            "Intentor\\LaravelForm\\": "src/"
+        },
+        "files": [
+            "src/Resources/helpers.php"
+        ]
+    }
+}

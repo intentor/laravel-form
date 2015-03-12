@@ -1,0 +1,1 @@
+<button type="reset" class="btn btn-default">{{ $label }}</button>
