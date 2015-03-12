@@ -23,6 +23,6 @@ class ServiceProvider extends \Illuminate\Support\ServiceProvider {
 		);
 		
 		//Register the views' path.
-		View::addLocation(__DIR__ .'resources/views');
+		View::addLocation(__DIR__ .'/resources/views');
 	}
 }
