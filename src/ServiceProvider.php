@@ -21,7 +21,10 @@ class ServiceProvider extends \Illuminate\Support\ServiceProvider {
 			'intentor.laravel-form',
 			'Intentor\LaravelForm\Service'
 		);
-		
+
+		//Require the blade template.		
+		require base_path(__DIR__ .'/resources/helpers/form.php');
+
 		//Register the views' path.
 		View::addLocation(__DIR__ .'/resources/views');
 	}

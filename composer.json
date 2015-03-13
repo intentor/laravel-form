@@ -22,9 +22,6 @@
     "autoload": {
         "psr-4": {
             "Intentor\\LaravelForm\\": "src/"
-        },
-        "files": [
-            "src/Resources/helpers.php"
-        ]
+        }
     }
 }
