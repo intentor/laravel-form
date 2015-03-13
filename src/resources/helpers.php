@@ -4,7 +4,7 @@
 
 /**
  * Creates a pattern matcher for multiline functions.
- * @param string $function
+ * @param string $function The function name to be matched.
  * @return string The patterhn.
  */
 function createMultilineFunctionMatcher($function) {
