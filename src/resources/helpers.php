@@ -98,7 +98,7 @@ Blade::extend(function($view, $compiler) {
 //@form_checkbox_group
 Blade::extend(function($view, $compiler) {
     $pattern = createMultilineFunctionMatcher('form_checkbox_group');
-    return preg_replace($pattern, '<?php echo Form::checkboxGroup$3; ?>?>', $view);
+    return preg_replace($pattern, '<?php echo Form::checkboxGroup$3; ?>', $view);
 });
 
 //@form_radio_group
