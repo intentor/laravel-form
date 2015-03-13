@@ -1,6 +1,6 @@
 # Laravel Form Helper
 
-**Form helpers for Laravel 5+**
+**Form helpers for Laravel 5**
 
 ## Contents
 
@@ -40,7 +40,7 @@
 
 *Laravel Form* provides a series of helpers for form creation in PHP pages and Blade templates.
 
-Compatible with Laravel 5+.
+Compatible with Laravel 5.
 
 ## <a id="installation"></a>Installation
 

@@ -1,6 +1,6 @@
 # Laravel Form Helper
 
-**Form helpers for Laravel 5+**
+**Form helpers for Laravel 5**
 
 ## Changelog
 
