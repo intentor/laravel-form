@@ -1,4 +1,4 @@
-# ![Laravel Form](https://cloud.githubusercontent.com/assets/5340818/6645403/18babfcc-c99b-11e4-9f86-ebbbb619c100.png)
+# ![Laravel Form](https://cloud.githubusercontent.com/assets/5340818/6645463/9c9d47f6-c99b-11e4-98ef-1cc82c7364d0.png)
 
 **Form helpers for Laravel 5**
 
