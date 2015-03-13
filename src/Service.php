@@ -20,7 +20,7 @@ class Service {
 	 * 
 	 * @param string $url Action URL.
 	 * @param string $method Form method.
-	 * @param bool $theme Controls theme. It's a subfolder on the partials.form folder.
+	 * @param bool $theme Controls' theme. It's a subfolder on the partials.form folder.
 	 * @param bool $includeCsrfToken Indicates whether the CSRF token should be included.
 	 * @param array $attributes Form attributes.
 	 */
@@ -51,7 +51,7 @@ class Service {
 	 * @param object $model Model object.
 	 * @param string $url Action URL.
 	 * @param string $method Form method.
-	 * @param bool $theme Controls theme. It's a subfolder on the partials.form folder.
+	 * @param bool $theme Controls' theme. It's a subfolder on the partials.form folder.
 	 * @param bool $includeCsrfToken Indicates whether the CSRF token should be included.
 	 * @param array $attributes Form attributes.
 	 */
@@ -73,7 +73,7 @@ class Service {
 	 * 
 	 * @param string $text Label text.
 	 * @param string $field Related field name.
-	 * @param array $attributes Element attributes.
+	 * @param array $attributes Element attributes. Format: [ 'attribute' => 'value' ].
 	 */
 	public function label($text, $field = null, $attributes = []) {
 		echo view($this->viewPath.'.label', compact('text', 'field', 'attributes'));
@@ -84,7 +84,7 @@ class Service {
 	 * 
 	 * @param string $label Label text.
 	 * @param string $text Field text.
-	 * @param array $attributes Element attributes.
+	 * @param array $attributes Element attributes. Format: [ 'attribute' => 'value' ].
 	 */
 	public function readonly($label, $text, $attributes = []) {
 		echo view($this->viewPath.'.readonly', compact('label', 'text', 'attributes'));
@@ -95,7 +95,7 @@ class Service {
 	 * 
 	 * @param string $name Field name.
 	 * @param string $value Field value.
-	 * @param array $attributes Element attributes.
+	 * @param array $attributes Element attributes. Format: [ 'attribute' => 'value' ].
 	 */
 	public function hidden($name, $value = null, $attributes = []) {
 		echo view($this->viewPath.'.hidden', compact('name', 'value', 'attributes'));
@@ -106,7 +106,7 @@ class Service {
 	 * 
 	 * @param string $name Field name.
 	 * @param string $label Field label.
-	 * @param array $attributes Element attributes.
+	 * @param array $attributes Element attributes. Format: [ 'attribute' => 'value' ].
 	 */
 	public function text($name, $label = null, $attributes = []) {
 		$required = (!empty($attributes['required']) && $attributes['required']);
@@ -119,7 +119,7 @@ class Service {
 	 * 
 	 * @param string $name Field name.
 	 * @param string $label Field label.
-	 * @param array $attributes Element attributes.
+	 * @param array $attributes Element attributes. Format: [ 'attribute' => 'value' ].
 	 */
 	public function textarea($name, $label = null, $attributes = []) {
 		$required = (!empty($attributes['required']) && $attributes['required']);
@@ -136,7 +136,7 @@ class Service {
 	 * 
 	 * @param string $name Field name.
 	 * @param string $label Field label.
-	 * @param array $attributes Element attributes.
+	 * @param array $attributes Element attributes. Format: [ 'attribute' => 'value' ].
 	 */
 	public function email($name, $label = null, $attributes = []) {
 		$required = (!empty($attributes['required']) && $attributes['required']);
@@ -149,7 +149,7 @@ class Service {
 	 * 
 	 * @param string $name Field name.
 	 * @param string $label Field label.
-	 * @param array $attributes Element attributes.
+	 * @param array $attributes Element attributes. Format: [ 'attribute' => 'value' ].
 	 */
 	public function url($name, $label = null, $attributes = []) {
 		$required = (!empty($attributes['required']) && $attributes['required']);
@@ -158,14 +158,14 @@ class Service {
 	}
 		
 	/**
-	 * Creates an URL field.
+	 * Creates a number field.
 	 * 
 	 * @param string $name Field name.
 	 * @param string $label Field label.
 	 * @param int $min Minimum number.
 	 * @param int $max Maximum number.
 	 * @param int $step Combined with the min value, defines the acceptable numbers in the range.
-	 * @param array $attributes Element attributes.
+	 * @param array $attributes Element attributes. Format: [ 'attribute' => 'value' ].
 	 */
 	public function number($name, $label = null, $min = 0, $max = 9999, $step = 1, $attributes = []) {
 		$required = (!empty($attributes['required']) && $attributes['required']);
@@ -183,7 +183,7 @@ class Service {
 	 * 
 	 * @param string $name Field name.
 	 * @param string $label Field label.
-	 * @param array $attributes Element attributes.
+	 * @param array $attributes Element attributes. Format: [ 'attribute' => 'value' ].
 	 */
 	public function password($name, $label = null, $attributes = []) {
 		$required = (!empty($attributes['required']) && $attributes['required']);
@@ -197,7 +197,7 @@ class Service {
 	 * @param string $name Field name.
 	 * @param string $label Field label.
 	 * @param string $value Field value.
-	 * @param array $attributes Element attributes.
+	 * @param array $attributes Element attributes. Format: [ 'attribute' => 'value' ].
 	 */
 	public function checkbox($name, $label = null, $value = 1, $attributes = []) {
 		$required = (!empty($attributes['required']) && $attributes['required']);
@@ -210,7 +210,7 @@ class Service {
 	 * 
 	 * @param string $name Field name.
 	 * @param string $label Field label.
-	 * @param array $attributes Element attributes.
+	 * @param array $attributes Element attributes. Format: [ 'attribute' => 'value' ].
 	 */
 	public function radio($name, $label = null, $attributes = []) {
 		$required = (!empty($attributes['required']) && $attributes['required']);
@@ -223,9 +223,9 @@ class Service {
 	 * 
 	 * @param string $name Field name.
 	 * @param string $label Field label.
-	 * @param array $list Item's list. Should be on format [ 'value' => '', 'text' => '' ].
-	 * @param array $selected Selected values.
-	 * @param array $attributes Element attributes.
+	 * @param array $list Item's list. Format: [ 'value' => '', 'text' => '' ].
+	 * @param array $selected Selected values. Format: [ 'value', 'value', ... ]
+	 * @param array $attributes Element attributes. Format: [ 'attribute' => 'value' ].
 	 */
 	public function checkboxGroup($name, $label = null, $list = [], $selected = [], $attributes = []) {
 		$required = (!empty($attributes['required']) && $attributes['required']);
@@ -248,9 +248,9 @@ class Service {
 	 * 
 	 * @param string $name Field name.
 	 * @param string $label Field label.
-	 * @param array $list Item's list. Should be on format [ 'value' => '', 'text' => '' ].
+	 * @param array $list Item's list. Format: [ 'value' => '', 'text' => '' ].
 	 * @param string $selected Selected value.
-	 * @param array $attributes Element attributes.
+	 * @param array $attributes Element attributes. Format: [ 'attribute' => 'value' ].
 	 */
 	public function radioGroup($name, $label = null, $list = [], $selected = null, $attributes = []) {
 		$required = (!empty($attributes['required']) && $attributes['required']);
@@ -267,10 +267,10 @@ class Service {
 	 * 
 	 * @param string $name Field name.
 	 * @param string $label Field label.
-	 * @param array $list Item's list. Should be on format [ 'value' => 'text', 'text' => '' ].
+	 * @param array $list Item's list. Format: [ 'value' => 'text', 'text' => '' ].
 	 * @param string $empty Empty value text. If no text is provided, there will not be an empty option.
 	 * @param string $selected Selected value.
-	 * @param array $attributes Element attributes.
+	 * @param array $attributes Element attributes. Format: [ 'attribute' => 'value' ].
 	 */
 	public function dropdown($name, $label = null, $list = [], $empty = null, $selected = null, $attributes = []) {
 		$required = (!empty($attributes['required']) && $attributes['required']);
@@ -308,6 +308,46 @@ class Service {
 	 */
 	public function buttons($submitLabel, $resetLabel = null) {
 		echo view($this->viewPath.'.buttons', compact('submitLabel', 'resetLabel'));
+	}
+	
+	/**
+	 * Generates an array compatible with lists (dropdowns, checkbox groups, etc.).
+	 * 
+	 * @param object $model Model to be converted.
+	 * @param string $valueField Field on data that is the value.
+	 * @param string $textField Field on data that is the text.
+	 * @return array Array of [ 'value' => '', 'text' => '' ].
+	 */
+	public function modelToList($model, $valueField, $textField) {
+		$list = [];
+		
+		foreach ($model as $item) {
+			$listItem = [
+				'value' => $item[$valueField],
+				'text' => $item[$textField]
+			];
+			
+			array_push($list, $listItem);
+		}
+		
+		return $list;
+	}
+	
+	/**
+	 * Generates an array of selected values.
+	 * 
+	 * @param object $model Model to be converted.
+	 * @param string $valueField Field on data that is the value.
+	 * @return array Array of values.
+	 */
+	public function modelToSelected($model, $valueField) {
+		$selected = [];
+		
+		foreach ($model as $item) {
+			array_push($selected, $item[$valueField]);
+		}
+		
+		return $selected;
 	}
 	
 	/**
@@ -380,45 +420,5 @@ class Service {
 			
 			return $key.'="'.$attributes[$key].'"';
 		}, array_keys($attributes)));
-	}
-	
-	/**
-	 * Generates an array compatible with lists (dropdowns, checkbox groups, etc.).
-	 * 
-	 * @param object $model Model to be converted.
-	 * @param string $valueField Field on data that is the value.
-	 * @param string $textField Field on data that is the text.
-	 * @return array Array of [ 'value' => '', 'text' => '' ].
-	 */
-	public function modelToList($model, $valueField, $textField) {
-		$list = [];
-		
-		foreach ($model as $item) {
-			$listItem = [
-				'value' => $item[$valueField],
-				'text' => $item[$textField]
-			];
-			
-			array_push($list, $listItem);
-		}
-		
-		return $list;
-	}
-	
-	/**
-	 * Generates an array of selected values.
-	 * 
-	 * @param object $model Model to be converted.
-	 * @param string $valueField Field on data that is the value.
-	 * @return array Array of values.
-	 */
-	public function modelToSelected($model, $valueField) {
-		$selected = [];
-		
-		foreach ($model as $item) {
-			array_push($selected, $item[$valueField]);
-		}
-		
-		return $selected;
 	}
 }

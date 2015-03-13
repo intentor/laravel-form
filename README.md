@@ -8,34 +8,37 @@
 2. <a href="#installation">Installation</a>
 3. <a href="#quick-start">Quick start</a>
 4. <a href="#helpers">Helpers</a>
-    1. <a href="#form-open">open</a>
-    2. <a href="#form-model">model</a>
-    3. <a href="#form-close">close</a>
-    4. <a href="#form-label">label</a>
-    5. <a href="#form-readonly">readonly</a>
-    6. <a href="#form-hidden">hidden</a>
-    7. <a href="#form-text">text</a>
-    8. <a href="#form-textarea">textarea</a>
-    9. <a href="#form-email">email</a>
-    10. <a href="#form-url">url</a>
-    11. <a href="#form-number">number</a>
-    12. <a href="#form-password">password</a>
-    13. <a href="#form-checkbox">checkbox</a>
-    14. <a href="#form-radio">radio</a>
-    15. <a href="#form-checkboxGroup">checkboxGroup</a>
-    16. <a href="#form-radioGroup">radioGroup</a>
-    17. <a href="#form-dropdown">dropdown</a>
-    18. <a href="#form-submit">submit</a>
-    19. <a href="#form-reset">reset</a>
-    20. <a href="#form-buttons">buttons</a>
-5. <a href="#themes">Themes</a>
-6. <a href="#changelog">Changelog</a>
-7. <a href="#support">Support</a>
-8. <a href="#license">License</a>
+    * <a href="#form-open">open</a>
+    * <a href="#form-model">model</a>
+    * <a href="#form-close">close</a>
+    * <a href="#form-label">label</a>
+    * <a href="#form-readonly">readonly</a>
+    * <a href="#form-hidden">hidden</a>
+    * <a href="#form-text">text</a>
+    * <a href="#form-textarea">textarea</a>
+    * <a href="#form-email">email</a>
+    * <a href="#form-url">url</a>
+    * <a href="#form-number">number</a>
+    * <a href="#form-password">password</a>
+    * <a href="#form-checkbox">checkbox</a>
+    * <a href="#form-radio">radio</a>
+    * <a href="#form-checkboxGroup">checkboxGroup</a>
+    * <a href="#form-radioGroup">radioGroup</a>
+    * <a href="#form-dropdown">dropdown</a>
+    * <a href="#form-submit">submit</a>
+    * <a href="#form-reset">reset</a>
+    * <a href="#form-buttons">buttons</a>
+5. <a href="#utilities">Utilities</a>
+    * <a href="#form-modelToList">modelToList</a>
+    * <a href="#form-modelToSelected">modelToSelected</a>
+6. <a href="#themes">Themes</a>
+7. <a href="#changelog">Changelog</a>
+8. <a href="#support">Support</a>
+9. <a href="#license">License</a>
 
 ## <a id="introduction"></a>Introduction
 
-*Laravel Form* provides a series of helpers for form creation on Blade templates.
+*Laravel Form* provides a series of helpers for form creation in PHP pages and Blade templates.
 
 Compatible with Laravel 5+.
 
@@ -69,7 +72,17 @@ At `config/app.php`, add the Service Provider and the Facade:
 
 ## <a id="quick-start"></a>Quick start
 
-To create a form, use the `Form` facade to open and close it:
+To create a form, you can user either Blade helpers or the `Form` Facade.
+
+Using Blade helpers:
+
+```php
+@form_open(action('SomeController@action'))
+                    
+@form_close
+```
+
+Using Facades:
 
 ```php
 {!! Form::open(action('SomeController@action')) !!}
@@ -77,8 +90,21 @@ To create a form, use the `Form` facade to open and close it:
 {!! Form::close() !!}
 ```
 
-Any controls you want to create must be placed between the opening and closing of the form:
+Any controls you want to create must be placed between the opening and closing of the form.
 
+Using Blade helpers:
+
+```php
+@form_open(action('SomeController@action'))
+    
+@form_text('name', 'Name')
+                        
+@form_buttons('Send', 'Reset')
+            
+@form_close
+```
+
+Using Facades:
 ```php
 {!! Form::open(action('SomeController@action')) !!}
 	
@@ -95,15 +121,23 @@ Any controls you want to create must be placed between the opening and closing o
 
 Opens a form. See <a href="#themes">Themes</a> for more details on form themes.
 
+#### Blade helper
+
+```php
+@form_open($url, $method = 'POST', $theme = null, $includeCsrfToken = true, $attributes = [])
+```
+
+#### Facade
+
 ```php
 {!! Form::open($url, $method = 'POST', $theme = null, $includeCsrfToken = true, $attributes = []) !!}
 ```
 
-**Parameters**
+#### Parameters
 
 * string `$url` Action URL.
 * string `$method` Form method.
-* bool `$theme` Controls theme. It's a subfolder on the partials.form folder.
+* bool `$theme` Controls' theme. It's a subfolder on the partials.form folder.
 * bool `$includeCsrfToken` Indicates whether the CSRF token should be included.
 * array `$attributes` Form attributes.
 
@@ -111,16 +145,24 @@ Opens a form. See <a href="#themes">Themes</a> for more details on form themes.
 
 Opens a form for a model. See <a href="#themes">Themes</a> for more details on form themes.
 
+#### Blade helper
+
+```php
+@form_
+```
+
+#### Facade
+
 ```php
 {!! Form::model($model, $url, $method = 'POST', $theme = null, $includeCsrfToken = true, $attributes = []) !!}
 ```
 
-**Parameters**
+#### Parameters
 
 * object `$model` Model object.
 * string `$url` Action URL.
 * string `$method` Form method.
-* bool `$theme` Controls theme. It's a subfolder on the partials.form folder.
+* bool `$theme` Controls' theme. It's a subfolder on the partials.form folder.
 * bool `$includeCsrfToken` Indicates whether the CSRF token should be included.
 * array `$attributes` Form attributes.
 
@@ -128,11 +170,19 @@ Opens a form for a model. See <a href="#themes">Themes</a> for more details on f
 
 Closes a from.
 
+#### Blade helper
+
+```php
+@form_close
+```
+
+#### Facade
+
 ```php
 {!! Form::close() !!}
 ```
 
-**Parameters**
+#### Parameters
 
 None.
 
@@ -140,218 +190,338 @@ None.
 
 Creates a label.
 
+#### Blade helper
+
+```php
+@form_label($text, $field = null, $attributes = [])
+```
+
+#### Facade
+
 ```php
 {!! Form::label($text, $field = null, $attributes = []) !!}
 ```
 
-**Parameters**
+#### Parameters
  
 * string `$text` Label text.
 * string `$field` Related field name.
-* array `$attributes` Element attributes.
+* array `$attributes` Element attributes. Format: [ 'attribute' => 'value' ].
 
 ### <a id="form-readonly"></a>readonly
 
 Creates a readonly control.
 
+#### Blade helper
+
+```php
+@form_readonly($label, $text, $attributes = [])
+```
+
+#### Facade
+
 ```php
 {!! Form::readonly($label, $text, $attributes = []) !!}
 ```
 
-**Parameters**
+#### Parameters
  
 * string `$label` Label text.
 * string `$text` Field text.
-* array `$attributes` Element attributes.
+* array `$attributes` Element attributes. Format: [ 'attribute' => 'value' ].
 
 ### <a id="form-hidden"></a>hidden
 
 Creates a hidden field.
 
+#### Blade helper
+
+```php
+@form_hidden($name, $value = null, $attributes = [])
+```
+
+#### Facade
+
 ```php
 {!! Form::hidden($name, $value = null, $attributes = []) !!}
 ```
 
-**Parameters**
+#### Parameters
  
 * string `$name` Field name.
 * string `$value` Field value.
-* array `$attributes` Element attributes.
+* array `$attributes` Element attributes. Format: [ 'attribute' => 'value' ].
 
 ### <a id="form-text"></a>text
 
 Creates a text field.
 
+#### Blade helper
+
+```php
+@form_text($name, $label = null, $attributes = [])
+```
+
+#### Facade
+
 ```php
 {!! Form::text($name, $label = null, $attributes = []) !!}
 ```
 
-**Parameters**
+#### Parameters
  
 * string `$name` Field name.
 * string `$label` Field label.
-* array `$attributes` Element attributes.
+* array `$attributes` Element attributes. Format: [ 'attribute' => 'value' ].
 
 ### <a id="form-textarea"></a>textarea
 
 Creates a textarea field.
 
+#### Blade helper
+
+```php
+@form_textarea($name, $label = null, $attributes = [])
+```
+
+#### Facade
+
 ```php
 {!! Form::textarea($name, $label = null, $attributes = []) !!}
 ```
 
-**Parameters**
+#### Parameters
  
 * string `$name` Field name.
 * string `$label` Field label.
-* array `$attributes` Element attributes.
+* array `$attributes` Element attributes. Format: [ 'attribute' => 'value' ].
 
 ### <a id="form-email"></a>email
 
 Creates an e-mail field.
 
+#### Blade helper
+
+```php
+@form_email($name, $label = null, $attributes = [])
+```
+
+#### Facade
+
 ```php
 {!! Form::email($name, $label = null, $attributes = []) !!}
 ```
 
-**Parameters**
+#### Parameters
  
 * string `$name` Field name.
 * string `$label` Field label.
-* array `$attributes` Element attributes.
+* array `$attributes` Element attributes. Format: [ 'attribute' => 'value' ].
 
 ### <a id="form-url"></a>url
 
 Creates an URL field.
 
+#### Blade helper
+
+```php
+@form_url($name, $label = null, $attributes = [])
+```
+
+#### Facade
+
 ```php
 {!! Form::url($name, $label = null, $attributes = []) !!}
 ```
 
-**Parameters**
+#### Parameters
  
 * string `$name` Field name.
 * string `$label` Field label.
-* array `$attributes` Element attributes.
+* array `$attributes` Element attributes. Format: [ 'attribute' => 'value' ].
 
 ### <a id="form-number"></a>number
 
-Creates an URL field.
+Creates a number field.
+
+#### Blade helper
+
+```php
+@form_number($name, $label = null, $min = 0, $max = 9999, $step = 1, $attributes = [])
+```
+
+#### Facade
 
 ```php
 {!! Form::number($name, $label = null, $min = 0, $max = 9999, $step = 1, $attributes = []) !!}
 ```
 
-**Parameters**
+#### Parameters
  
 * string `$name` Field name.
 * string `$label` Field label.
 * int `$min` Minimum number.
 * int `$max` Maximum number.
 * int `$step` Combined with the min value, defines the acceptable numbers in the range.
-* array `$attributes` Element attributes.
+* array `$attributes` Element attributes. Format: [ 'attribute' => 'value' ].
 
 ### <a id="form-password"></a>password
 
 Creates a password field.
 
+#### Blade helper
+
+```php
+@form_password($name, $label = null, $attributes = [])
+```
+
+#### Facade
+
 ```php
 {!! Form::password($name, $label = null, $attributes = []) !!}
 ```
 
-**Parameters**
+#### Parameters
  
 * string `$name` Field name.
 * string `$label` Field label.
-* array `$attributes` Element attributes.
+* array `$attributes` Element attributes. Format: [ 'attribute' => 'value' ].
 
 ### <a id="form-checkbox"></a>checkbox
 
 Creates a checkbox field.
 
+#### Blade helper
+
+```php
+@form_checkbox($name, $label = null, $value = 1, $attributes = [])
+```
+
+#### Facade
+
 ```php
 {!! Form::checkbox($name, $label = null, $value = 1, $attributes = []) !!}
 ```
 
-**Parameters**
+#### Parameters
  
 * string `$name` Field name.
 * string `$label` Field label.
 * string `$value` Field value.
-* array `$attributes` Element attributes.
+* array `$attributes` Element attributes. Format: [ 'attribute' => 'value' ].
 
 ### <a id="form-radio"></a>radio
 
 Creates a radio field.
 
+#### Blade helper
+
+```php
+@form_radio($name, $label = null, $attributes = [])
+```
+
+#### Facade
+
 ```php
 {!! Form::radio($name, $label = null, $attributes = []) !!}
 ```
 
-**Parameters**
+#### Parameters
  
 * string `$name` Field name.
 * string `$label` Field label.
-* array `$attributes` Element attributes.
+* array `$attributes` Element attributes. Format: [ 'attribute' => 'value' ].
 
 ### <a id="form-checkboxGroup"></a>checkboxGroup
 
 Creates a checkbox group.
 
+#### Blade helper
+
+```php
+@form_checkbox_group($name, $label = null, $list = [], $selected = [], $attributes = [])
+```
+
+#### Facade
+
 ```php
 {!! Form::checkboxGroup($name, $label = null, $list = [], $selected = [], $attributes = []) !!}
 ```
 
-**Parameters**
+#### Parameters
  
 * string `$name` Field name.
 * string `$label` Field label.
-* array `$list` Item's list. Should be on format [ 'value' => '', 'text' => '' ].
-* array `$selected` Selected values.
-* array `$attributes` Element attributes.
+* array `$list` Item's list. Format: [ 'value' => '', 'text' => '' ]. Use <a href="#form-modelToList">modelToList</a> to generate a list from models.
+* array `$selected` Selected values. Format: [ 'value', 'value', ... ]. Use <a href="#form-modelToSelected">modelToSelected</a> to generate values from models.
+* array `$attributes` Element attributes. Format: [ 'attribute' => 'value' ].
 
 ### <a id="form-radioGroup"></a>radioGroup
 
 Creates a radio group.
 
+#### Blade helper
+
+```php
+@form_radio_group($name, $label = null, $list = [], $selected = null, $attributes = [])
+```
+
+#### Facade
+
 ```php
 {!! Form::radioGroup($name, $label = null, $list = [], $selected = null, $attributes = []) !!}
 ```
 
-**Parameters**
+#### Parameters
  
 * string `$name` Field name.
 * string `$label` Field label.
-* array `$list` Item's list. Should be on format [ 'value' => '', 'text' => '' ].
+* array `$list` Item's list. Format: [ 'value' => '', 'text' => '' ]. Use <a href="#form-modelToList">modelToList</a> to generate a list from models.
 * string `$selected` Selected value.
-* array `$attributes` Element attributes.
+* array `$attributes` Element attributes. Format: [ 'attribute' => 'value' ].
 
 ### <a id="form-dropdown"></a>dropdown
 
 Creates a dropdown field.
 
+#### Blade helper
+
+```php
+@form_dropdown($name, $label = null, $list = [], $empty = null, $selected = null, $attributes = [])
+```
+
+#### Facade
+
 ```php
 {!! Form::dropdown($name, $label = null, $list = [], $empty = null, $selected = null, $attributes = []) !!}
 ```
 
-**Parameters**
+#### Parameters
  
 * string `$name` Field name.
 * string `$label` Field label.
-* array `$list` Item's list. Should be on format [ 'value' => 'text', 'text' => '' ].
+* array `$list` Item's list. Format: [ 'value' => 'text', 'text' => '' ]. Use <a href="#form-modelToList">modelToList</a> to generate a list from models.
 * string `$empty` Empty value text. If no text is provided, there will not be an empty option.
 * string `$selected` Selected value.
-* array `$attributes` Element attributes.
+* array `$attributes` Element attributes. Format: [ 'attribute' => 'value' ].
 
 ### <a id="form-submit"></a>submit
 
 Creates a submit button.
 
+#### Blade helper
+
+```php
+@form_submit($label)
+```
+
+#### Facade
+
 ```php
 {!! Form::submit($label) !!}
 ```
 
-**Parameters**
+#### Parameters
  
 * string `$label` Control label.
 
@@ -359,30 +529,81 @@ Creates a submit button.
 
 Creates a reset button.
 
+#### Blade helper
+
+```php
+@form_reset($label)
+```
+
+#### Facade
+
 ```php
 {!! Form::reset($label) !!}
 ```
 
-**Parameters**
-
-None
+#### Parameters
+ 
+* string `$label` Control label.
 
 ### <a id="form-buttons"></a>buttons
 
 Creates form buttons (submit and reset).
 
+#### Blade helper
+
+```php
+@form_buttons($submitLabel, $resetLabel = null)
+```
+
+#### Facade
+
 ```php
 {!! Form::buttons($submitLabel, $resetLabel = null) !!}
 ```
 
-**Parameters**
+#### Parameters
 
 * string `$submitLabel` Submit button label.
 * string `$resetLabel` Reset button label. If no label is given, the button is not created.
 
+## <a id="utilities"></a>Utilities
+ 
+### <a id="form-modelToList"></a>modelToList
+
+Generates an array compatible with lists (dropdowns, checkbox groups, etc.).
+
+#### Facade
+
+```php
+Form::modelToList($model, $valueField, $textField)
+```
+
+#### Parameters
+
+* object `$model` Model to be converted.
+* string `$valueField` Field on data that is the value.
+* string `$textField` Field on data that is the text.
+
+### <a id="form-modelToSelected"></a>modelToSelected
+
+Generates an array of selected values.
+
+#### Facade
+
+```php
+Form::modelToSelected($model, $valueField)
+```
+
+#### Parameters
+    
+* object `$model` Model to be converted.
+* string `$valueField` Field on data that is the value.
+
 ## <a id="themes"></a>Themes
 
 Themes are a way to customize the look of forms using partial views.
+
+### Available themes
 
 There are three different themes available:
 
@@ -392,7 +613,13 @@ There are three different themes available:
 
 All themes are subfolders at `src/resources/views/partials/form` folder.
 
-**Note**: currently, to create a custom form theme, you have to place the theme at `src/resources/views/partials/form` folder. 
+### Creating a custom theme
+
+To create a custom theme, copy a base theme from `vendor/intentor/laravel-form/src/resources/views/partials/form` at your local Laravel installation to the `resources/views/partials/form` of your app.
+
+Each helper has its own Blade template file, which can then be customized.
+
+**Note**: the name of the theme's folder is the name that must be used when <a href="#form-open">setting the theme</a>.
 
 ## <a id="changelog"></a>Changelog
 
