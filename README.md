@@ -627,7 +627,7 @@ Please see [CHANGELOG.md](CHANGELOG.md).
 
 ## <a id="support"></a>Support
 
-Found a bug? Please create an issue on the [GitHub project page](https://github.com/intentor/laravel-form/issues) or send a pull request if have a fix or extension.
+Found a bug? Please create an issue on the [GitHub project page](https://github.com/intentor/laravel-form/issues) or send a pull request if you have a fix or extension.
 
 You can also send me a message at support@intentor.com.br to discuss more obscure matters about the component.
 
