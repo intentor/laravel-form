@@ -1,7 +1,7 @@
 {
     "name": "intentor/laravel-form",
     "description": "Form helpers for Laravel 5.",
-    "keywords": [ "laravel", "form", "html", "helper" ],
+    "keywords": [ "laravel-5", "form", "html", "helper" ],
 	"homepage": "https://github.com/intentor/laravel-form",
 	"type": "library",
     "license": "MIT",
