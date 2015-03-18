@@ -4,6 +4,10 @@
 
 ## Changelog
 
+### 1.1.1 (2015-03-18)
+
+- Updated component folder structure.
+
 ### 1.1 (2015-03-13)
 
 - Added blade helpers for form methods.

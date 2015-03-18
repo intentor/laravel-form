@@ -22,10 +22,13 @@ class ServiceProvider extends \Illuminate\Support\ServiceProvider {
 			'Intentor\LaravelForm\Service'
 		);
 
+		$sourcePath = str_replace('Intentor/LaravelForm', '', __DIR__);
+		$sourcePath = str_replace('Intentor\LaravelForm', '', $sourcePath);
+
 		//Require the blade template.
-		require __DIR__ .'/resources/helpers.php';
+		require $sourcePath.'resources/helpers.php';
 
 		//Register the views' path.
-		View::addLocation(__DIR__ .'/resources/views');
+		View::addLocation($sourcePath.'/resources/views');
 	}
 }
