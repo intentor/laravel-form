@@ -6,7 +6,7 @@
 
 ### 1.1.1 (2015-03-18)
 
-- Updated component folder structure.
+- Updated folder structure.
 
 ### 1.1 (2015-03-13)
 
