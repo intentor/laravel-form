@@ -3,7 +3,7 @@
 		{!! Form::label($label, $name, ($required ? ['required' => true] : [])) !!}
 	@endif
 	
-	<input type="text" id="{{ $name }}" name="{{ $name }}" value="{{ Form::value($name) }}"
+	<input type="text" id="{{ $name }}" name="{{ $name }}"
 		{!! Form::attributes($attributes, [ 'class' => 'form-control' ]) !!}>
 		
 	@if ($required && isset($errors))

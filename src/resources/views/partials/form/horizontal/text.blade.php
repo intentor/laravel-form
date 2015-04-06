@@ -6,7 +6,7 @@
 	@endif
 	
 	<div class="col-md-6">
-		<input type="text" id="{{ $name }}" name="{{ $name }}" value="{{ Form::value($name) }}"
+		<input type="text" id="{{ $name }}" name="{{ $name }}"
 			{!! Form::attributes($attributes, [ 'class' => 'form-control' ]) !!}>
 
 		@if ($required && isset($errors))

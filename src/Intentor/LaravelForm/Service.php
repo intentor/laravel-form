@@ -110,6 +110,9 @@ class Service {
 	 */
 	public function text($name, $label = null, $attributes = []) {
 		$required = (!empty($attributes['required']) && $attributes['required']);
+		if (empty($attributes['value'])) {
+			$attributes['value'] = self::getValue($name);
+		}
 		
 		echo view($this->viewPath.'.text', compact('name', 'label', 'required', 'attributes'));
 	}
@@ -140,6 +143,9 @@ class Service {
 	 */
 	public function email($name, $label = null, $attributes = []) {
 		$required = (!empty($attributes['required']) && $attributes['required']);
+		if (empty($attributes['value'])) {
+			$attributes['value'] = self::getValue($name);
+		}
 		
 		echo view($this->viewPath.'.email', compact('name', 'label', 'required', 'attributes'));
 	}
@@ -153,6 +159,9 @@ class Service {
 	 */
 	public function url($name, $label = null, $attributes = []) {
 		$required = (!empty($attributes['required']) && $attributes['required']);
+		if (empty($attributes['value'])) {
+			$attributes['value'] = self::getValue($name);
+		}
 		
 		echo view($this->viewPath.'.url', compact('name', 'label', 'required', 'attributes'));
 	}
@@ -187,6 +196,9 @@ class Service {
 	 */
 	public function password($name, $label = null, $attributes = []) {
 		$required = (!empty($attributes['required']) && $attributes['required']);
+		if (empty($attributes['value'])) {
+			$attributes['value'] = self::getValue($name);
+		}
 		
 		echo view($this->viewPath.'.password', compact('name', 'label', 'required', 'attributes'));
 	}
