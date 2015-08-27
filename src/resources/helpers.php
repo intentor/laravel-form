@@ -2,131 +2,102 @@
 
 //Form Facade helpers
 
-/**
- * Creates a pattern matcher for multiline functions.
- * @param string $function The function name to be matched.
- * @return string The patterhn.
- */
-function createMultilineFunctionMatcher($function) {
-	return '/(@'.$function.')(\s*)?(\(((?>[^()]+)|(?3))*\))/';
-}
-
 //@form_open
-Blade::extend(function($view, $compiler) {
-    $pattern = createMultilineFunctionMatcher('form_open');
-    return preg_replace($pattern, '<?php echo Form::open$3; ?>', $view);
+Blade::directive('form_open', function($expression) {
+    return "<?php echo Form::open$expression; ?>";
 });
 
 //@form_model
-Blade::extend(function($view, $compiler) {
-    $pattern = createMultilineFunctionMatcher('form_model');
-    return preg_replace($pattern, '<?php echo Form::model$3; ?>', $view);
+Blade::directive('form_model', function($expression) {
+    return "<?php echo Form::model$expression; ?>";
 });
 
 //@form_close
-Blade::extend(function($view, $compiler) {
-    $pattern = $compiler->createPlainMatcher('form_close');
-    return preg_replace($pattern, '<?php echo Form::close(); ?>', $view);
+Blade::directive('form_close', function() {
+    return "<?php echo Form::close(); ?>";
 });
 
 //@form_label
-Blade::extend(function($view, $compiler) {
-    $pattern = createMultilineFunctionMatcher('form_label');
-    return preg_replace($pattern, '<?php echo Form::label$3; ?>', $view);
+Blade::directive('form_label', function($expression) {
+    return "<?php echo Form::label$expression; ?>";
 });
 
 //@form_readonly
-Blade::extend(function($view, $compiler) {
-    $pattern = createMultilineFunctionMatcher('form_readonly');
-    return preg_replace($pattern, '<?php echo Form::readonly$3; ?>', $view);
+Blade::directive('form_readonly', function($expression) {
+    return "<?php echo Form::readonly$expression; ?>";
 });
 
 //@form_hidden
-Blade::extend(function($view, $compiler) {
-    $pattern = createMultilineFunctionMatcher('form_hidden');
-    return preg_replace($pattern, '<?php echo Form::hidden$3; ?>', $view);
+Blade::directive('form_hidden', function($expression) {
+    return "<?php echo Form::hidden$expression; ?>";
 });
 
 //@form_text
-Blade::extend(function($view, $compiler) {
-    $pattern = createMultilineFunctionMatcher('form_text');
-    return preg_replace($pattern, '<?php echo Form::text$3; ?>', $view);
+Blade::directive('form_text', function($expression) {
+    return "<?php echo Form::text$expression; ?>";
 });
 
 //@form_textarea
-Blade::extend(function($view, $compiler) {
-    $pattern = createMultilineFunctionMatcher('form_textarea');
-    return preg_replace($pattern, '<?php echo Form::textarea$3; ?>', $view);
+Blade::directive('form_textarea', function($expression) {
+    return "<?php echo Form::textarea$expression; ?>";
 });
 
 //@form_email
-Blade::extend(function($view, $compiler) {
-    $pattern = createMultilineFunctionMatcher('form_email');
-    return preg_replace($pattern, '<?php echo Form::email$3; ?>', $view);
+Blade::directive('form_email', function($expression) {
+    return "<?php echo Form::email$expression; ?>";
 });
 
 //@form_url
-Blade::extend(function($view, $compiler) {
-    $pattern = createMultilineFunctionMatcher('form_url');
-    return preg_replace($pattern, '<?php echo Form::url$3; ?>', $view);
+Blade::directive('form_url', function($expression) {
+    return "<?php echo Form::url$expression; ?>";
 });
 
 //@form_number
-Blade::extend(function($view, $compiler) {
-    $pattern = createMultilineFunctionMatcher('form_number');
-    return preg_replace($pattern, '<?php echo Form::number$3; ?>', $view);
+Blade::directive('form_number', function($expression) {
+    return "<?php echo Form::number$expression; ?>";
 });
 
 //@form_password
-Blade::extend(function($view, $compiler) {
-    $pattern = createMultilineFunctionMatcher('form_password');
-    return preg_replace($pattern, '<?php echo Form::password$3; ?>', $view);
+Blade::directive('form_password', function($expression) {
+    return "<?php echo Form::password$expression; ?>";
 });
 
 //@form_checkbox
-Blade::extend(function($view, $compiler) {
-    $pattern = createMultilineFunctionMatcher('form_checkbox');
-    return preg_replace($pattern, '<?php echo Form::checkbox$3; ?>', $view);
+Blade::directive('form_checkbox', function($expression) {
+    return "<?php echo Form::checkbox$expression; ?>";
 });
 
 //@form_radio
-Blade::extend(function($view, $compiler) {
-    $pattern = createMultilineFunctionMatcher('form_radio');
-    return preg_replace($pattern, '<?php echo Form::radio$3; ?>', $view);
+Blade::directive('form_radio', function($expression) {
+    return "<?php echo Form::radio$expression; ?>";
 });
 
 //@form_checkbox_group
-Blade::extend(function($view, $compiler) {
-    $pattern = createMultilineFunctionMatcher('form_checkbox_group');
-    return preg_replace($pattern, '<?php echo Form::checkboxGroup$3; ?>', $view);
+Blade::directive('form_checkbox_group', function($expression) {
+    return "<?php echo Form::checkboxGroup$expression; ?>";
 });
 
 //@form_radio_group
-Blade::extend(function($view, $compiler) {
-    $pattern = createMultilineFunctionMatcher('form_radio_group');
-    return preg_replace($pattern, '<?php echo Form::radioGroup$3; ?>', $view);
+Blade::directive('form_radio_group', function($expression) {
+    return "<?php echo Form::radioGroup$expression; ?>";
 });
 
 //@form_dropdown
-Blade::extend(function($view, $compiler) {
-    $pattern = createMultilineFunctionMatcher('form_dropdown');
-    return preg_replace($pattern, '<?php echo Form::dropdown$3; ?>', $view);
+Blade::directive('form_dropdown', function($expression) {
+    return "<?php echo Form::dropdown$expression; ?>";
 });
 
 //@form_submit
-Blade::extend(function($view, $compiler) {
-    $pattern = createMultilineFunctionMatcher('form_submit');
-    return preg_replace($pattern, '<?php echo Form::submit$3; ?>', $view);
+Blade::directive('form_submit', function($expression) {
+    return "<?php echo Form::submit$expression; ?>";
 });
 
 //@form_reset
-Blade::extend(function($view, $compiler) {
-    $pattern = createMultilineFunctionMatcher('form_reset');
-    return preg_replace($pattern, '<?php echo Form::reset$3; ?>', $view);
+Blade::directive('form_reset', function($expression) {
+    return "<?php echo Form::reset$expression; ?>";
 });
 
 //@form_buttons
-Blade::extend(function($view, $compiler) {
-    $pattern = createMultilineFunctionMatcher('form_buttons');
-    return preg_replace($pattern, '<?php echo Form::buttons$3; ?>', $view);
+Blade::directive('form_buttons', function($expression) {
+    return "<?php echo Form::buttons$expression; ?>";
 });

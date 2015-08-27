@@ -44,6 +44,8 @@ Compatible with Laravel 5.
 
 ## <a id="installation"></a>Installation
 
+### Laravel 5.0
+
 At `composer.json` of your Laravel installation, add the following require line:
 
 ``` json
@@ -66,7 +68,35 @@ At `config/app.php`, add the Service Provider and the Facade:
 	//...
 
     'aliases' => [
-        ''Form' => 'Intentor\LaravelForm\Facade'
+        'Form' => 'Intentor\LaravelForm\Facade'
+    ]
+```
+
+### Laravel 5.1+
+
+At `composer.json` of your Laravel installation, add the following require line:
+
+``` json
+{
+    "require": {
+        "intentor/laravel-form": "~2.0"
+    }
+}
+```
+
+Run `composer update` to add the package to your Laravel app.
+
+At `config/app.php`, add the Service Provider and the Facade:
+
+```php
+    'providers' => [
+        Intentor\LaravelForm\ServiceProvider::class,
+    ]
+
+    //...
+
+    'aliases' => [
+        'Form' => Intentor\LaravelForm\Facade::class,
     ]
 ```
 
