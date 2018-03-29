@@ -4,12 +4,12 @@
 
 //@form_open
 Blade::directive('form_open', function($expression) {
-    return "<?php echo Form::open($expression; ?>";
+    return "<?php echo Form::open($expression); ?>";
 });
 
 //@form_model
 Blade::directive('form_model', function($expression) {
-    return "<?php echo Form::model($expression; ?>";
+    return "<?php echo Form::model($expression); ?>";
 });
 
 //@form_close
