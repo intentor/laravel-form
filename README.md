@@ -2,6 +2,8 @@
 
 **Form helpers for Laravel 5**
 
+Currently the project is **DISCONTINUED**. However, feel free to fork it and continue its development!
+
 ## Contents
 
 1. <a href="#introduction">Introduction</a>
